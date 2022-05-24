@@ -1,0 +1,19 @@
+<!-- esto es interpolación que lso datos vienen de otro lado y para mostrarlos se usan dobles llaves -->
+
+<h1>hola {{nombre}} {{apellido}} </h1>
+<h2>buenos dias soy {{alumno.nombre}} alumno de sexto</h2>
+
+<!-- para dar valor a una propiedad usamos el propierety building osea metemos en trecorchetes el atributo -->
+<img [src]="imagen" alt="">
+<br>
+
+<input type="text" [value]="inputNuevo">
+
+<br><br>
+<!-- vamos a hacer que cuando se cambie el texto en el input se cambie en el parrafo -->
+
+<input type="text" [(ngModel)]="inputNuevo">
+<p>{{inputNuevo}}</p>
+
+  
+

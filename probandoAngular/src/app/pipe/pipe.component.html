@@ -1,0 +1,25 @@
+<p> 
+	<!-- los pipe son los signos de or o | que esta en la mitad y ayudan para dar un formato al texto  -->
+	{{ titulo | uppercase}} con Uppercase
+</p>
+<p>
+	{{ titulo | lowercase}} con Lowercase
+</p>
+<p>
+	{{ titulo | titlecase}} con Titlecase
+</p>
+<!-- con el currency se vuelve moneda y despues de los dos puntos y entre comillas se pone el signo de la moneda que se quiere -->
+
+<p> {{ dinero | currency }} </p>
+
+<p> {{ ganancias | percent }} </p>
+
+<p>{{ fechaNacimiento | date : 'short' }} </p>
+
+<div class="cuadrado">
+	 <p>
+		 {{ textoLargo | continuara }}
+	 </p>
+</div>
+
+
