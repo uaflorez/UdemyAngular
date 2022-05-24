@@ -1,0 +1,41 @@
+<!-- esto es interpolación que lso datos vienen de otro lado y para mostrarlos se usan dobles llaves -->
+
+<h1>hola {{nombre}} {{apellido}} </h1>
+<h2>buenos dias soy {{alumno.nombre}} alumno de sexto</h2>
+
+<!-- para dar valor a una propiedad usamos el propierety building osea metemos en trecorchetes el atributo -->
+<img [src]="imagen" (mouseenter)="cambiarTamano($event)" (mouseleave)="incrementarTamano($event)" alt="">
+<br>
+<!-- <input type="text" [value]="inputNuevo"> -->
+
+<br><br>
+<!-- vamos a hacer que cuando se cambie el texto en el input se cambie en el parrafo con two way binding [(ngModel)] -->
+
+<input type="text" [(ngModel)]="inputNuevo">
+<p>{{inputNuevo}}</p>
+
+<label for="">Correo
+	<input type="text" (ngModelChange)="escribirCorreo()" [(ngModel)]="correo">
+</label>
+<label for="">Password
+	<!-- keydown es para capturar cuando se opimen las teclas y keyup para lo contrario  -->
+	<input type="password" ((keydown))="ingresar($event)" [(ngModel)]="password">
+</label>
+<!-- <label for="">Correo
+	<input type="text" (ngModelChange)="escribirCorreo()" [(ngModel)]="correo">
+</label>
+<label for="">Password
+	<input type="password" (ngModelChange)="escribirModelo()" [(ngModel)]="password">
+</label> -->
+
+<button (dblclick)="iniciar()">Iniciar</button>
+<button (dblclick)="llamarAlert()">Doble click</button>
+<!--<br><br>
+<input type="text"  (input)="escribir($event)">
+<br><br>
+
+<input type="text" (focus)="colorearBorde($event)" name="" id="">
+ -->
+
+
+  
