@@ -1,19 +1,54 @@
 <div class="container">
+	<div class="col">
+		<h3>{{titulo}} </h3>
+	</div>
+	<hr>
+	<form action="" class="row g-3">
+		<div class="form-group col-auto">
+			<label for="nombre" class="visually-hidden">Nombre</label>
+			<input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control"
+			[(ngModel)]="nombreInput">
+		</div>
+		<div class="form-group col-auto">
+			<label for="apellido" class="visually-hidden">Apellido</label>
+			<input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
+			[(ngModel)]="apellidoInput">
+		</div>
+		<div class="col-auto">
+			<button type="submit" class="btn btn-primary" (click)="agregarPersona()">Agregar Persona</button>
+		</div>
+	</form>
+	<app-persona
+		*ngFor="let personaElemento of personas; let i = index"
+		[persona]="personaElemento"
+		[indice]="i"
+	></app-persona>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="container">
 	<div class="row">
 		<div class="col">
 			<h1>Listado de personas</h1>
+			<hr>
 
 			<button class="btn btn-primary" [disabled]="desabilitar" (click)="agregarPersona()">Agregar Persona</button>
-			<p *ngIf="mostrar" >{{ mensaje }}</p>
-			<app-persona></app-persona>
-
-			<label for="">Título Persona</label>
+			<p *ngIf="mostrar; else sinPersona" >{{ mensaje }} </p>
+			<ng-template #sinPersona>
+				<p>No se ha agregado ninguna persona</p>
+			</ng-template>
+						 -->
+			<!-- <label for="">Título Persona</label>
 			<input type="text" class="form-control" [(ngModel)]="titulo" > 
-			{{titulo}}
-
+			{{titulo}} 
+			
 		</div>
 	</div>
-	
-
-</div>
+</div> 
+-->
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Persona } from '../persona.model';
 
 @Component({
   selector: 'app-persona',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./persona.component.scss']
 })
 export class PersonaComponent implements OnInit {
-
-  nombre: string = 'Uriel';
-  apellido: string = 'Florez';
-  edad: number = 41;
+  
+  @Input() persona: Persona;
+  @Input() indice: number;
+  
   constructor() { /* TODO document why this constructor is empty */  }
 
   ngOnInit(): void {

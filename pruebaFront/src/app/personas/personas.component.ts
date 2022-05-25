@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Persona } from "../persona.model";
 
 @Component({
 	selector: 'app-personas',
@@ -7,15 +8,20 @@ import { Component } from "@angular/core";
 })
 
 export class PersonasComponent{
-	desabilitar = false;
-	mensaje = 'No se a agregado ninguna persona';
-	titulo = '';
-	mostrar = false;
+	titulo = 'Listado de personas'
+	personas: Persona[] = [
+		new Persona('Santiago', 'Florez'),
+		new Persona('Milena', 'Baquero'),
+		new Persona('Eliana', 'Florez')
+	];
+	nombreInput: string = '';
+	apellidoInput: string = '';
 
 	agregarPersona() {
-		this.mostrar = false;
-		this.mensaje = 'Persona Agregada';
+		let persona1 = new Persona(this.nombreInput, this.apellidoInput);
+		this.personas.push(persona1);
 	}
+
 	// Este es el concepto de event binding va en () y el de properti binding va en []
 	// esto va en el html  (input)="modificarTitulo($event)" dentro del input
 	// modificarTitulo(event: Event) {
